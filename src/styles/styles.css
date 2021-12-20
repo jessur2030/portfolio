@@ -356,18 +356,21 @@ img {
 
 .home__title {
   font-size: var(--big-font-size);
+  /* font-weight: var(--font-semi-bold); */
 }
 
 .home__subtile {
   font-size: var(--h3-font-size);
   color: var(--text-color);
   font-weight: var(--font-medium);
-  margin-bottom: var(--mb-0-75);
+  margin-bottom: var(--mb-2);
+
+  /* margin-bottom: var(--mb-0-75); */
 }
 
-.home__description {
+/* .home__description {
   margin-bottom: var(--mb-2);
-}
+} */
 
 .home__scroll {
   display: none;
@@ -1035,6 +1038,10 @@ img {
   .home__content {
     padding-top: 5.5rem;
     column-gap: 2rem;
+  }
+
+  .home__subtile {
+    margin-bottom: var(--mb-2);
   }
 
   /* .home__img {

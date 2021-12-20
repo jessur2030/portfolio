@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <meta name="theme-color" content="#" /> -->
+  <meta name="description" content="Jesus Rosario | Personal Portfolio " />
 
   <!-- /*==================== GOOGLE FONTS ====================*/ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,14 +14,14 @@
   <!--==================== UNICONS ====================-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
   <!--==================== SWIPER CSS ====================-->
-  <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/src/styles/swiper-bundle.min.css" />
 
   <!--==================== STYLE CSS ====================-->
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="/src/styles/styles.css" />
   <!--==================== APP JS ====================-->
-  <script defer src="/assets/js/index.js"></script>
+  <script defer src="/src/js/index.js"></script>
   <!--==================== SWIPER JS ====================-->
-  <script src="/assets/js/swiper-bundle.min.js"></script>
+  <script src="/src/js/swiper-bundle.min.js"></script>
 
   <title>Jesus Rosario | Portfolio</title>
 </head>
@@ -53,7 +55,7 @@
           </li>
           <li class="nav__item">
             <a href="#mywork" class="nav__link">
-              <i class="uil uil-scenery nav__icon"></i>My work
+              <i class="uil uil-scenery nav__icon"></i>Projects
             </a>
           </li>
           <li class="nav__item">
@@ -104,12 +106,12 @@
 
           <div class="home__data">
             <h1 class="home__title">Hi There 👋,<br> I'm Jesus Rosario</h1>
-            <h3 class="home__subtitle">Full Stack Web Developer</h3>
-            <p class="home__description">
+            <h3 class="home__subtile">Full Stack Web Developer</h3>
+            <!-- <p class="home__description">
               I'm a Full-stack Web Developer with experience developing web applications using technologies such as
               JavaScript, ReactJS, NodeJS, SQL, and MongoDB.
 
-            </p>
+            </p> -->
             <a href="#contact" class="button button--flex ">
               Contact Me <i class="uil uil-message button__icon px-left"></i></a>
 
@@ -132,12 +134,13 @@
       <h2 class="section__title">About Me</h2>
       <span class="section__subtitle">My introduction</span>
       <div class="about__container container grid">
-        <img src="/assets/image/me-1.svg" alt="" class="about__img">
+        <img src="/assets/img/me-1.svg" alt="" class="about__img">
 
         <div class="about__data">
 
           <p class="about__description">Full-stack Web Developer with experience developing web applications using
-            technologies such as JavaScript, NodeJS and MySQL. Delivering quality work. </p>
+            technologies such as JavaScript, NodeJS, ExpressJS, MySQL, MS SQL, and MongoDB (Mongoose). Delivering
+            quality work. </p>
 
 
           <div class="about__info">
@@ -200,6 +203,15 @@
 
               </div>
             </div>
+
+            <div class="skills__data">
+              <div class="skills__titles">
+                <h3 class="skills__name">React JS</h3>
+                <i class="uil uil-react skills__icon"></i>
+              </div>
+              <div class="skills__bar">
+              </div>
+            </div>
             <div class="skills__data">
 
               <div class="skills__titles">
@@ -217,14 +229,7 @@
               <div class="skills__bar">
               </div>
             </div>
-            <div class="skills__data">
-              <div class="skills__titles">
-                <h3 class="skills__name">React JS</h3>
-                <i class="uil uil-react skills__icon"></i>
-              </div>
-              <div class="skills__bar">
-              </div>
-            </div>
+
 
           </div>
         </div>
@@ -246,7 +251,7 @@
           <div class="skills__list grid">
             <div class="skills__data">
               <div class="skills__titles">
-                <h3 class="skills__name">Node JS</h3>
+                <h3 class="skills__name">Node JS </h3>
               </div>
               <div class="skills__bar">
               </div>
@@ -265,13 +270,13 @@
               <div class="skills__bar">
               </div>
             </div>
-            <div class="skills__data">
+            <!-- <div class="skills__data">
               <div class="skills__titles">
                 <h3 class="skills__name">C#</h3>
               </div>
               <div class="skills__bar">
               </div>
-            </div>
+            </div> -->
 
           </div>
         </div>
@@ -301,14 +306,14 @@
             </div>
             <div class="skills__data">
               <div class="skills__title">
-                <h3 class="skills__name">MongoDB</h3>
+                <h3 class="skills__name">MongoDB (Mongoose)</h3>
               </div>
               <div class="skills__bar">
               </div>
             </div>
             <div class="skills__data">
               <div class="skills__title">
-                <h3 class="skills__name">MS SQL Server</h3>
+                <h3 class="skills__name">T-SQL</h3>
               </div>
               <div class="skills__bar">
               </div>
@@ -321,14 +326,13 @@
     <!--==================== SERVICES ====================-->
     <section class="services section" id="services">
       <h2 class="section__title">Services</h2>
-      <span class="section__subtitle">What I offer</span>
+      <span class="section__subtitle">Available for freelance</span>
 
       <div class="services__container container grid">
         <!--==================== SERVICES 1 ====================-->
         <div class="services__content">
           <div>
             <i class="uil uil-server-alt services__icon"></i>
-
             <h3 class="services__title">Backend <br>Web Developer</h3>
           </div>
 
@@ -353,11 +357,11 @@
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>I develop MySQL database</p>
+                  <p>MySQL data access</p>
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>I develop MongoDB database</p>
+                  <p>MongoDB (Mongoose) data access</p>
                 </li>
 
               </ul>
@@ -393,13 +397,8 @@
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>I create ux elements interactions</p>
+                  <p>I create UI/UX elements interactions</p>
                 </li>
-                <li class="services__modal-service">
-                  <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>I position your company brand</p>
-                </li>
-
               </ul>
             </div>
           </div>
@@ -433,7 +432,7 @@
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
-                  <p>Microsoft SQL Server</p>
+                  <p>MS SQL Server database</p>
                 </li>
                 <li class="services__modal-service">
                   <i class="uil uil-check-circle services__modal-icon"></i>
@@ -450,7 +449,7 @@
 
     <!--==================== PORTFOLIO ====================-->
     <section class="portfolio section" id="mywork">
-      <h2 class="section__title">My work</h2>
+      <h2 class="section__title">Projects</h2>
       <span class="section__subtitle">Most recent work</span>
       <!-- <div class="portfolio__container container"> -->
       <div class="portfolio__container container swiper-container">
@@ -558,15 +557,15 @@
 
           <div class="project__data">
 
-            <h2 class="project__title">Interested ?</h2>
-            <p class="project__description"> Lets Get In Touch !</p>
+            <h2 class="project__title">Interested in working together?</h2>
+            <p class="project__description"> Lets Get In Touch!</p>
             <a href="#contact" class="button button--flex ">
               Contact me
               <i class="uil uil-message proejct__icon button__icon"></i>
             </a>
           </div>
 
-          <img src="/assets/image/me-4.svg" alt="" class="project__img">
+          <img src="/assets/img/me-4.svg" alt="" class="project__img">
         </div>
       </div>
 
