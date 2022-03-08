@@ -508,6 +508,10 @@ img {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
+.skills__content:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
 .skills__title {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
@@ -535,6 +539,7 @@ img {
 
 .skills__data {
   display: flex;
+  align-items: center;
   column-gap: 0.5rem;
 }
 
@@ -564,6 +569,10 @@ img {
   padding: 3rem 1.5rem 1.5em;
   /* position: relative; */
   border-radius: 1rem;
+}
+
+.services__card:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
 .services__title {
@@ -701,16 +710,18 @@ img {
   border-radius: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
-/* .portfolio__card:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+.portfolio__card:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+
   transition: 0.3s;
-} */
+}
 
 .portfolio__img {
-  width: 100%;
-  /* width: 268px; */
+  height: 350px;
+  width: 350px;
   border-radius: 1rem;
   margin-bottom: 0.75rem;
+  object-fit: cover;
   /* justify-self: center; */
 }
 
@@ -803,6 +814,9 @@ img {
   border-radius: 0.75rem;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+.contact__card:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
 .contact__icon {
@@ -1069,11 +1083,11 @@ img {
     justify-content: center;
   }
 
-  .portfolio__img {
+  /* .portfolio__img {
     width: 300px;
     height: 250px;
     object-fit: scale-down;
-  }
+  } */
   .contact__form {
     width: 360px;
     margin: 0 auto;
