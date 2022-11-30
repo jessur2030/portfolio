@@ -76,12 +76,14 @@ const modalViews = document.querySelectorAll(".services__modal");
 const modalBtns = document.querySelectorAll(".services__button");
 const modalCloses = document.querySelectorAll(".services__modal-close");
 
+console.log(modalBtns);
 const modalHandler = function (modalOpens) {
   modalViews[modalOpens].classList.add("active-modal");
 };
 
 modalBtns.forEach((modalBtn, i) => {
-  modalBtn.addEventListener("click", () => {
+  modalBtn.addEventListener("click", (e) => {
+    console.log(e);
     modalHandler(i);
   });
 });
