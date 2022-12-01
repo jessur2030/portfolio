@@ -4,6 +4,8 @@ const navToggle = document.querySelector("#nav-toggle");
 const navClose = document.querySelector("#nav-close");
 const navLink = document.querySelectorAll(".nav__link");
 
+// test
+
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
 if (navToggle) {
