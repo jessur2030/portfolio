@@ -5,6 +5,7 @@ const navClose = document.querySelector("#nav-close");
 const navLink = document.querySelectorAll(".nav__link");
 
 // test
+//another test
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
