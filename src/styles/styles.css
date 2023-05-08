@@ -32,7 +32,7 @@
   --color-primary: hsl(212, 99%, 49%);
 
   /*========== Font and typography ==========*/
-  --body-font: "Poppins", sans-serif;
+  --body-font: 'Poppins', sans-serif;
 
   /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
   --big-font-size: 2rem;
@@ -146,8 +146,8 @@ body {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -547,7 +547,8 @@ img {
 /*==================== SERVICES ====================*/
 
 .services__container {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  /* grid-template-columns: repeat(2, 1fr); */
   gap: 1.5rem;
   padding-top: 1rem;
 }
@@ -1141,7 +1142,7 @@ img {
   }
 
   .services__container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     place-content: center;
   }
 
@@ -1208,7 +1209,7 @@ img {
     padding: 6.5rem 0 1rem;
   }
   .section__title {
-    margin-bottom: 3.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .header,
@@ -1229,7 +1230,7 @@ img {
   }
 
   .services__container {
-    grid-template-columns: repeat(3, 14.875rem);
+    grid-template-columns: 1fr;
     place-content: center;
   }
 
