@@ -911,7 +911,7 @@ img {
   background: none;
   color: var(--text-color);
   outline: none;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 0.75rem;
   z-index: 1;
 }
