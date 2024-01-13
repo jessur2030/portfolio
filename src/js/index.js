@@ -11,7 +11,6 @@ const darkTheme = 'dark-theme';
 const iconTheme = 'uil-sun';
 
 const toggleMenu = () => navMenu.classList.toggle('show-menu');
-const toggleSkills = () => this.parentNode.classList.toggle('skills__open');
 const handleScroll = () => {
   const scrollY = window.scrollY;
   if (scrollBtn.getBoundingClientRect().top < scrollY + 800) {
@@ -23,10 +22,6 @@ const handleScroll = () => {
 const topFunction = () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
-};
-
-const handleLinkClick = () => {
-  navMenu.classList.remove('show-menu');
 };
 
 const toggleTheme = () => {
@@ -55,10 +50,19 @@ if (selectedTheme) {
 
 navToggle.addEventListener('click', toggleMenu);
 navClose.addEventListener('click', toggleMenu);
-navLinks.forEach((link) => link.addEventListener('click', handleLinkClick));
+navLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const targetId = link.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Close the menu on all devices
+    if (navMenu.classList.contains('show-menu')) {
+      console.log('contains the show-menu class');
+      navMenu.classList.remove('show-menu'); // Or use your menu's closing mechanism
+    }
+  });
+});
 scrollBtn.addEventListener('click', topFunction);
 window.addEventListener('scroll', handleScroll);
-skillHeaders.forEach((header) =>
-  header.addEventListener('click', toggleSkills)
-);
 themeButton.addEventListener('click', toggleTheme);
