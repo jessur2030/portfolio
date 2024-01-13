@@ -586,6 +586,10 @@ img {
   color: var(--first-color);
 }
 
+.qualification__detail {
+  margin-bottom: 1rem;
+}
+
 /*==================== SKILLS ====================*/
 .skills__container {
   /* row-gap: 0; */
@@ -615,7 +619,7 @@ img {
 
 .skills__box {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   column-gap: 2.5rem;
 }
 
