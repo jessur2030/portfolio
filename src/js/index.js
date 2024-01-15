@@ -1,68 +1,80 @@
+// DOM Elements
 const navMenu = document.querySelector('#nav-menu');
 const navToggle = document.querySelector('#nav-toggle');
 const navClose = document.querySelector('#nav-close');
-
 const navLinks = document.querySelectorAll('.nav__link');
-const skillsList = document.getElementsByClassName('skills__content');
-const skillHeaders = document.querySelectorAll('.skills__header');
-const scrollBtn = document.getElementById('scroll-up');
 const themeButton = document.getElementById('theme-button');
+const scrollBtn = document.getElementById('scroll-up');
+
+// Constants
 const darkTheme = 'dark-theme';
 const iconTheme = 'uil-sun';
 
+// Toggle Navigation Menu
 const toggleMenu = () => navMenu.classList.toggle('show-menu');
-const handleScroll = () => {
-  const scrollY = window.scrollY;
-  if (scrollBtn.getBoundingClientRect().top < scrollY + 800) {
-    scrollBtn.style.display = 'block';
-  } else {
-    scrollBtn.style.display = 'none';
+
+// Theme Toggle and Storage
+const toggleTheme = () => {
+  const isDark = document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme);
+  localStorage.setItem('selected-theme', isDark ? 'dark' : 'light');
+  localStorage.setItem('selected-icon', isDark ? 'uil-moon' : 'uil-sun');
+};
+
+// Scroll to Top Function
+const topFunction = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+// Initialize Theme Based on Storage
+const initTheme = () => {
+  const selectedTheme = localStorage.getItem('selected-theme');
+  const selectedIcon = localStorage.getItem('selected-icon');
+  if (selectedTheme) {
+    document.body.classList.toggle(darkTheme, selectedTheme === 'dark');
+    themeButton.classList.toggle(iconTheme, selectedIcon === 'uil-moon');
   }
 };
-const topFunction = () => {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+
+// Scroll Button Visibility using Intersection Observer
+const initScrollButtonVisibility = () => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        // Footer is in view, show the scroll button
+        scrollBtn.style.display = 'block';
+      } else {
+        // Footer is not in view, hide the scroll button
+        scrollBtn.style.display = 'none';
+      }
+    },
+    { root: null, threshold: 0 }
+  );
+  observer.observe(document.querySelector('.footer'));
 };
 
-const toggleTheme = () => {
-  document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
-  localStorage.setItem('selected-theme', getCurrentTheme());
-  localStorage.setItem('selected-icon', getCurrentIcon());
+// Smooth Scroll for Navigation Links
+const initSmoothScroll = () => {
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Close menu if open
+      if (navMenu.classList.contains('show-menu')) {
+        toggleMenu();
+      }
+    });
+  });
 };
 
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? 'dark' : 'light';
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun';
-
-const selectedTheme = localStorage.getItem('selected-theme');
-const selectedIcon = localStorage.getItem('selected-icon');
-
-if (selectedTheme) {
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](
-    darkTheme
-  );
-  themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](
-    iconTheme
-  );
-}
-
+// Event Listeners
 navToggle.addEventListener('click', toggleMenu);
 navClose.addEventListener('click', toggleMenu);
-navLinks.forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    const targetId = link.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // Close the menu on all devices
-    if (navMenu.classList.contains('show-menu')) {
-      console.log('contains the show-menu class');
-      navMenu.classList.remove('show-menu'); // Or use your menu's closing mechanism
-    }
-  });
-});
 scrollBtn.addEventListener('click', topFunction);
-window.addEventListener('scroll', handleScroll);
 themeButton.addEventListener('click', toggleTheme);
+
+// Initialize Functions
+initTheme();
+initScrollButtonVisibility();
+initSmoothScroll();
